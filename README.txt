@@ -1,3 +1,4 @@
+How to run: python3 main.py -f <Filter method to use: kalman, particle, maf, savgol, wavelet")>
 
 Analysis options for GP2Y0A60SZ0F/GP2Y0A60SZLF:
 
