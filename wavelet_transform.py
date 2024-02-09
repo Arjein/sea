@@ -23,13 +23,3 @@ def wavelet_denoise(data, wavelet, level):
     coeff[1:] = (pywt.threshold(i, value=threshold, mode='soft') for i in coeff[1:])
     # Reconstruct the signal
     return pywt.waverec(coeff, wavelet, mode="per")
-
-# Example usage with synthetic data
-np.random.seed(42)  # For reproducibility
-true_positions = np.linspace(1, 100, 400)
-measured_positions = true_positions + np.random.normal(0, 5, true_positions.shape)  # Adding Gaussian noise
-
-# Denoising with Wavelet Transform
-wavelet = 'db4'  # Daubechies wavelet
-level = 2  # Level of decomposition
-denoised_positions = wavelet_denoise(measured_positions, wavelet, level)
